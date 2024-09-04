@@ -7,7 +7,8 @@ class encoder
 private:
     /* data */
     uint8_t encoder_pin;
-    Digital_in EncoderPin;
+    Digital_in EncoderAPin;
+    Digital_in EncoderBPin;
     uint16_t ui16EncoderPos = 0;
 public:
 
@@ -15,7 +16,7 @@ public:
     int16_t position(void);
     void update(void);
 
-    encoder(int8_t pin_number = -1);
+    encoder(int8_t pin_A_number, int8_t pin_B_number);
     ~encoder();
 };
 
