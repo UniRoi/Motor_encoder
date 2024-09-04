@@ -5,11 +5,10 @@
 class encoder
 {
 private:
-    /* data */
     uint8_t encoder_pin;
     Digital_in EncoderAPin;
     Digital_in EncoderBPin;
-    uint16_t ui16EncoderPos = 0;
+    volatile uint16_t ui16EncoderPos = 0;
 public:
 
     void init(void);

@@ -12,10 +12,10 @@ Digital_in::~Digital_in()
 {
 }
 
-/// @brief init a pin at portc as input
+/// @brief init a pin at portd as input, because of the external interrupts
 void Digital_in::init()
 {
-    DDRC &= ~pinMask;
+    DDRD &= ~pinMask;
 }
 
 /// @brief reads defined pin value
@@ -24,7 +24,7 @@ bool Digital_in::is_hi()
 {
     bool bIsHi = false;
     
-    if ( (PINC & pinMask) == pinMask)
+    if ( (PIND & pinMask) == pinMask)
     {
         bIsHi = true;
     }
@@ -38,7 +38,7 @@ bool Digital_in::is_lo()
 {
     bool bIsLo = false;
     
-    if ( (PINC & pinMask) == 0x00)
+    if ( (PIND & pinMask) == 0x00)
     {
         bIsLo = true;
     }
